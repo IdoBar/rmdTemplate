@@ -1,0 +1,44 @@
+---
+title: "Pipeline documentation"
+author: "Ido Bar"
+date: "12 June 2017"
+output: 
+    html_document:
+      toc: true
+      toc_depth: 4
+      highlight: pygments
+      code_folding: hide
+      number_sections: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(list(echo = TRUE, eval=FALSE, message=FALSE))
+# load my utilities from Gist (https://gist.github.com/IdoBar/7f63547158ecdbacf31b54a58af0d1cc)
+devtools::source_gist("7f63547158ecdbacf31b54a58af0d1cc", filename = "util.R")
+install.deps(c("tidyverse", "captioner", "knitr", "pander"))
+```
+
+```{r init_captions, include=FALSE, eval=TRUE}
+figs <- captioner(prefix="Figure")
+tbls <- captioner(prefix="Table")
+figs(name="LenFreq1","Length frequency of Ruffe captured in 1992.")
+figs(name="WtFreq1","Weight frequency of Ruffe captured in 1992.")
+```
+
+# Main Theme
+
+## Sub-sections
+Refer to any figure or table (even if they don't appear yet, such as `r figs("LenFreq1",display="cite")`)
+
+### Figures
+
+A figure can be placed right here:
+
+`r figs("LenFreq1")`
+
+
+
+
+
+***
+This document was last updated at `r Sys.time()` using R Markdown (built with `r R.version.string`). Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. It is especially powerful at authoring documents and reports which include code and can execute code and use the results in the output. For more details on using R Markdown see <http://rmarkdown.rstudio.com> and [Rmarkdown cheatsheet](https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf).
