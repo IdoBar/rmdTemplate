@@ -1,11 +1,11 @@
 ---
 title: "Pipeline documentation"
 author: "Ido Bar"
-date: "12 June 2017"
+date: '`r format(Sys.time(), '%d %B, %Y')`'
 output: 
     html_document:
       toc: true
-      toc_depth: 4
+      toc_depth: 3
       highlight: pygments
       code_folding: hide
       number_sections: true
