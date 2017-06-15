@@ -1,7 +1,7 @@
 ---
 title: "Pipeline documentation"
 author: "Ido Bar"
-date: '`r format(Sys.time(), '%d %B, %Y')`'
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: 
     html_document:
       toc: true
