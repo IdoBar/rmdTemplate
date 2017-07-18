@@ -33,7 +33,8 @@ Refer to any figure or table (even if they don't appear yet, such as `r tbls(nam
 ### Tables
 
 A table can be placed like this:
-```{r table1}
+```{r table1, eval=TRUE}
+set.alignment('left', row.names = 'right')
 pander(mtcars[1:4,1:4], caption=tbls(name="ExTab1"))
 ```
 
