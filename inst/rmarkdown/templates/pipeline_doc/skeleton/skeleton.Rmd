@@ -12,7 +12,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(list(echo = TRUE, eval=FALSE, message=FALSE))
+knitr::opts_chunk$set(list(echo = TRUE, eval=FALSE, message=FALSE, warning=FALSE))
 # load my utilities from Gist (https://gist.github.com/IdoBar/7f63547158ecdbacf31b54a58af0d1cc)
 devtools::source_gist("7f63547158ecdbacf31b54a58af0d1cc", filename = "util.R")
 install.deps(c("tidyverse", "captioner", "knitr", "pander"))
@@ -22,19 +22,22 @@ install.deps(c("tidyverse", "captioner", "knitr", "pander"))
 figs <- captioner(prefix="Figure")
 tbls <- captioner(prefix="Table")
 figs(name="LenFreq1","Length frequency of Ruffe captured in 1992.")
-figs(name="WtFreq1","Weight frequency of Ruffe captured in 1992.")
+tbls(name="ExTab1","Example table")
 ```
 
 # Main Theme
 
 ## Sub-sections
-Refer to any figure or table (even if they don't appear yet, such as `r figs("LenFreq1",display="cite")`)
+Refer to any figure or table (even if they don't appear yet, such as `r tbls(name="ExTab1",display="cite")`)
 
-### Figures
+### Tables
 
-A figure can be placed right here:
+A table can be placed like this:
+```{r table1}
+pander(mtcars[1:4,1:4], caption=tbls(name="ExTab1"))
+```
 
-`r figs("LenFreq1")`
+See [Pander documentation](http://rapporter.github.io/pander/) for additional formatting.
 
 
 
