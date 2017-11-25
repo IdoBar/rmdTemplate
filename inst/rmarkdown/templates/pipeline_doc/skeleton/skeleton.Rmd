@@ -15,10 +15,21 @@ csl: data/springer-basic-improved-author-date-with-italic-et-al-period.csl
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(list(echo = TRUE, eval=FALSE, message=FALSE, warning=FALSE))
+knitr::opts_chunk$set(list(echo = TRUE, eval=FALSE, message=FALSE))
 # load my utilities from Gist (https://gist.github.com/IdoBar/7f63547158ecdbacf31b54a58af0d1cc)
 devtools::source_gist("7f63547158ecdbacf31b54a58af0d1cc", filename = "util.R")
 install.deps(c("tidyverse", "captioner", "knitr", "pander", "DT"))
+# Font Format
+custom_font="consolas"
+fontFmt = function(x,font="consolas"){
+  #outputFormat = knitr::opts_knit$get("rmarkdown.pandoc.to")
+  #if (outputFormat == 'html')
+  formatted_text <- sprintf("<font face='%s'>%s</font>",font,x)
+  return(formatted_text)
+  #else
+  #  x
+}
+
 ```
 
 ```{r init_captions, include=FALSE, eval=TRUE}
