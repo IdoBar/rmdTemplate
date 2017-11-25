@@ -18,7 +18,7 @@ csl: data/springer-basic-improved-author-date-with-italic-et-al-period.csl
 knitr::opts_chunk$set(list(echo = TRUE, eval=FALSE, message=FALSE, warning=FALSE))
 # load my utilities from Gist (https://gist.github.com/IdoBar/7f63547158ecdbacf31b54a58af0d1cc)
 devtools::source_gist("7f63547158ecdbacf31b54a58af0d1cc", filename = "util.R")
-install.deps(c("tidyverse", "captioner", "knitr", "pander"))
+install.deps(c("tidyverse", "captioner", "knitr", "pander", "DT"))
 ```
 
 ```{r init_captions, include=FALSE, eval=TRUE}
