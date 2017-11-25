@@ -15,10 +15,21 @@ csl: data/springer-basic-improved-author-date-with-italic-et-al-period.csl
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(list(echo = TRUE, eval=FALSE, message=FALSE, warning=FALSE))
+knitr::opts_chunk$set(list(echo = TRUE, eval=FALSE, message=FALSE))
 # load my utilities from Gist (https://gist.github.com/IdoBar/7f63547158ecdbacf31b54a58af0d1cc)
 devtools::source_gist("7f63547158ecdbacf31b54a58af0d1cc", filename = "util.R")
 install.deps(c("tidyverse", "captioner", "knitr", "pander", "DT"))
+# Font Format
+custom_font="consolas"
+fontFmt = function(x,font="consolas"){
+  #outputFormat = knitr::opts_knit$get("rmarkdown.pandoc.to")
+  #if (outputFormat == 'html')
+  formatted_text <- sprintf("<font face='%s'>%s</font>",font,x)
+  return(formatted_text)
+  #else
+  #  x
+}
+
 ```
 
 ```{r init_captions, include=FALSE, eval=TRUE}
@@ -37,13 +48,21 @@ Literature references can be entered with \@kumar_current_2015 - [@kumar_current
 
 ### Tables
 
-A table can be placed like this:
+A table can be placed with Pander like this:
 ```{r table1, eval=TRUE}
 set.alignment('left', row.names = 'right')
 pander(mtcars[1:4,1:4], caption=tbls(name="ExTab1"))
 ```
 
 See [Pander documentation](http://rapporter.github.io/pander/) for additional formatting.
+
+Or with DT:
+
+```{r table2, eval=TRUE}
+DT::datatable(mtcars[1:4,1:4], caption=tbls(name="ExTab1"))
+```
+
+See [DataTable documentation](https://rstudio.github.io/DT/) for additional formatting.
 
 
 
