@@ -1,5 +1,6 @@
 ---
-title: "Pipeline documentation"
+title: "Pipeline Documentation"
+subtitle: "Analysis Details"
 author: "Ido Bar"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: 
