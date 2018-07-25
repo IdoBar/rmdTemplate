@@ -10,8 +10,8 @@ output:
       highlight: pygments
       number_sections: false
       code_folding: hide
-bibliography: data/ref_library.bib
-csl: data/springer-basic-improved-author-date-with-italic-et-al-period.csl
+bibliography: style/ref_library.bib
+csl: style/springer-basic-improved-author-date-with-italic-et-al-period.csl
 ---
 
 ```{r setup, include=FALSE}
